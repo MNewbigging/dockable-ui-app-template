@@ -17,3 +17,22 @@ html {
   width: 100vw;
   height: 100vh;
 }
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .controls-area {
+    flex: 0 0 50px;
+    width: 100%;
+  }
+
+  .canvas-area {
+    flex: 1 1 90%;
+    width: 90%;
+  }
+}
