@@ -1,3 +1,12 @@
 - create some dummy tabs
 - remove the viewer tab
 - add this as a card to my portfolio under random category 
+
+
+
+- Loading up the layout doesn't set tabs
+
+- Make sure state isn't created new on re-render
+
+- Make sure states/tabs are deleted properly
+

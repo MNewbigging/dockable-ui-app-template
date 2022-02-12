@@ -65,6 +65,11 @@ export class App extends React.Component {
           text={'Dummy tab 1'}
           onClick={() => this.editorState.addTab(PanelTabType.DUMMY_ONE, panelId)}
         />
+        <MenuItem
+          icon={'cargo-ship'}
+          text={'Dummy tab 2'}
+          onClick={() => this.editorState.addTab(PanelTabType.DUMMY_TWO, panelId)}
+        />
       </>
     );
   };

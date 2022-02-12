@@ -1,6 +1,6 @@
 import { DuiPanelContainerChild, DuiPanelContainerFlow } from '../state/DuiPanelContainer';
 import { DuiPanelTab } from '../state/DuiPanel';
-import { PanelTab } from '../../editor-root/state/EditorState';
+import { PanelTab, PanelTabType } from '../../editor-root/state/PanelTabTypes';
 
 export interface DuiLayoutModel {
   id: string;
@@ -34,7 +34,10 @@ export interface LayoutModel extends DuiLayoutModel {
   panels: PanelModel[];
 }
 
-export interface PanelModel {
-  id: string;
-  tabs: PanelTab[];
+export interface PanelModel extends DuiPanelModel {
+  tabs: TabModel[];
+}
+
+export interface TabModel extends DuiPanelTab {
+  type: PanelTabType;
 }

@@ -1,20 +1,20 @@
 import React from 'react';
 import { NonIdealState } from '@blueprintjs/core';
 
-import { DummyTabOneState } from './DummyTabOneState';
+import { DummyTabTwoState } from './DummyTabTwoState';
 
 interface Props {
-  dummyState: DummyTabOneState;
+  dummyState: DummyTabTwoState;
 }
 
-export class DummyTabOne extends React.Component<Props> {
+export class DummyTabTwo extends React.Component<Props> {
   public render() {
     const { dummyState } = this.props;
 
     return (
       <NonIdealState
-        icon={'tank'}
-        title={'Dummy tab 1'}
+        icon={'cargo-ship'}
+        title={'Dummy tab 2'}
         description={'The id of this tab is ' + dummyState.id}
       />
     );
