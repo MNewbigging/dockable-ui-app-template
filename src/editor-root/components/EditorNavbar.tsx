@@ -3,16 +3,19 @@ import './navbar.scss';
 import React from 'react';
 import { Divider, Menu, MenuItem, Position } from '@blueprintjs/core';
 import { Popover2 } from '@blueprintjs/popover2';
+import { observer } from 'mobx-react';
 
+import { DialogType } from '../../dialogs/state/DialogViewState';
 import { EditorState } from '../state/EditorState';
 
 interface Props {
   editorState: EditorState;
 }
 
-export class Navbar extends React.Component<Props> {
+@observer
+export class EditorNavbar extends React.Component<Props> {
   public render() {
-    return <div className={'navbar'}></div>;
+    return <div className={'navbar'}>{this.renderLayoutMenu()}</div>;
   }
 
   private renderLayoutMenu() {
@@ -64,9 +67,7 @@ export class Navbar extends React.Component<Props> {
             />
             <MenuItem
               text={'Manage layouts'}
-              onClick={() =>
-                editorState.dialogViewState.showDialog(EditorDialogType.MANAGE_LAYOUTS)
-              }
+              onClick={() => editorState.dialogViewState.showDialog(DialogType.MANAGE_LAYOUTS)}
             />
           </Menu>
         }

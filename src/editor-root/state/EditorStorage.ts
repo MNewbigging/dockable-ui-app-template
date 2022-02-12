@@ -21,7 +21,7 @@ export class EditorStorage {
 
   public loadStandardLayouts() {
     const standardLayout =
-      '{"rootContainerId":"OSPO","containers":[{"id":"OSPO","parentId":"","flow":"row","children":[{"id":"qrMy","basis":70},{"id":"fACT","basis":30}]}],"panels":[{"id":"qrMy","tabs":[{"id":"SRlJ","label":"Page editor","type":"Page editor"},{"id":"Qse6","label":"Story graph","type":"Story graph"}]},{"id":"fACT","tabs":[{"id":"uv6d","label":"Page inspector","type":"Page inspector"}]}],"name":"Standard layout"}';
+      '{"rootContainerId":"OSPO","containers":[{"id":"OSPO","parentId":"","flow":"row","children":[{"id":"qrMy","basis":70},{"id":"fACT","basis":30}]}],"panels":[{"id":"qrMy","tabs":[]},{"id":"fACT","tabs":[]}],"name":"Standard Layout"}';
 
     const stdLayout: LayoutModel = JSON.parse(standardLayout);
 

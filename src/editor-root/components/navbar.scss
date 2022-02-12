@@ -1,5 +1,27 @@
+@import '../../palette.scss';
+
 .navbar {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
   gap: 5px;
+
+  .menu-root-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $mainBorderColor;
+    }
+
+    .menu-root {
+      padding-left: 6px;
+      padding-right: 6px;
+      user-select: none;
+    }
+  }
 }

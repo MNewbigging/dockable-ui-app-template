@@ -5,22 +5,37 @@ import { Button, MenuItem, NonIdealState } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 
 import { DockableUI } from './dockable-ui/components/DockableUI';
+import { EditorNavbar } from './editor-root/components/EditorNavbar';
 import { EditorState } from './editor-root/state/EditorState';
+import { ManageLayoutsDialog } from './dialogs/manage-layouts-dialog/ManageLayoutsDialog';
 import { PanelTabType } from './editor-root/state/PanelTabTypes';
+import { SaveLayoutDialog } from './dialogs/save-layout-dialog/components/SaveLayoutDialog';
 import { TabBodyRenderer } from './editor-root/components/TabBodyRenderer';
 
 @observer
 export class App extends React.Component {
-  private appState = new EditorState();
+  private editorState = new EditorState();
 
   public render() {
     return (
       <div className={'app'}>
-        <div className={'navbar-area'}></div>
+        {/* Dialogs */}
+        <SaveLayoutDialog
+          dialogViewState={this.editorState.dialogViewState}
+          saveLayout={this.editorState.saveLayout}
+        />
+        <ManageLayoutsDialog
+          dialogViewState={this.editorState.dialogViewState}
+          editorStorage={this.editorState.editorStorage}
+        />
+
+        <div className={'navbar-area'}>
+          <EditorNavbar editorState={this.editorState} />
+        </div>
 
         <div className={'main-area'}>
           <DockableUI
-            duiState={this.appState.dockableUiState}
+            duiState={this.editorState.dockableUiState}
             renderTabBody={this.renderTabBody}
             renderPanelMenuItems={this.renderPanelMenuItems}
             renderNoPanels={this.renderNoPanels}
@@ -32,7 +47,7 @@ export class App extends React.Component {
 
   private renderTabBody = (tabId: string) => {
     // Get the tab to render
-    const tab = this.appState.getTab(tabId);
+    const tab = this.editorState.getTab(tabId);
     if (!tab) {
       return;
     }
@@ -48,14 +63,14 @@ export class App extends React.Component {
         <MenuItem
           icon={'presentation'}
           text={'Viewer'}
-          onClick={() => this.appState.addTab(PanelTabType.VIEWER, panelId)}
+          onClick={() => this.editorState.addTab(PanelTabType.VIEWER, panelId)}
         />
       </>
     );
   };
 
   private renderNoPanels = () => {
-    const { dockableUiState } = this.appState;
+    const { dockableUiState } = this.editorState;
 
     return (
       <div className={'no-panels-screen'}>
