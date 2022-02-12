@@ -1,12 +1,13 @@
 import './app.scss';
 
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { Button, MenuItem, NonIdealState } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 
-import { AppState } from './state/AppState';
+import { AppState } from './editor-root/state/AppState';
 import { DockableUI } from './dockable-ui/components/DockableUI';
-import { PanelTabType } from './state/PanelTabTypes';
+import { PanelTabType } from './editor-root/state/PanelTabTypes';
+import { TabBodyRenderer } from './editor-root/components/TabBodyRenderer';
 
 @observer
 export class App extends React.Component {
@@ -29,10 +30,16 @@ export class App extends React.Component {
     );
   }
 
-  private renderTabBody = (_tabId: string) => {
-    // TODO - Get the tab to render for this id
+  private renderTabBody = (tabId: string) => {
+    // Get the tab to render
+    const tab = this.appState.getTab(tabId);
+    if (!tab) {
+      return;
+    }
 
-    return <div>something</div>;
+    const tabBody = TabBodyRenderer.makeTabRenderer(tab);
+
+    return <>{tabBody}</>;
   };
 
   private renderPanelMenuItems = (panelId: string) => {

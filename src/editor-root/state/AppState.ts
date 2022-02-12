@@ -1,7 +1,7 @@
-import { DockableUIState } from '../dockable-ui/state/DockableUIState';
-import { DuiPanelTab } from '../dockable-ui/state/DuiPanel';
+import { DockableUIState } from '../../dockable-ui/state/DockableUIState';
+import { DuiPanelTab } from '../../dockable-ui/state/DuiPanel';
 import { PanelTabType } from './PanelTabTypes';
-import { RandomUtils } from '../utils/RandomUtils';
+import { RandomUtils } from '../../utils/RandomUtils';
 
 export interface PanelTab extends DuiPanelTab {
   type: PanelTabType;
@@ -26,4 +26,8 @@ export class AppState {
     // Give it to dockable ui to render
     this.dockableUiState.addPanelTab(tab, panelId);
   };
+
+  public getTab(id: string) {
+    return this.tabMap.get(id);
+  }
 }
