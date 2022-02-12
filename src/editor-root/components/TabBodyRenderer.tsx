@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PanelTab } from '../state/AppState';
+import { PanelTab } from '../state/EditorState';
 import { PanelTabType } from '../state/PanelTabTypes';
 import { Viewer } from '../../viewer/Viewer';
 

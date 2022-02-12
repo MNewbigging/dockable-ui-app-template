@@ -4,14 +4,14 @@ import React from 'react';
 import { Button, MenuItem, NonIdealState } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 
-import { AppState } from './editor-root/state/AppState';
 import { DockableUI } from './dockable-ui/components/DockableUI';
+import { EditorState } from './editor-root/state/EditorState';
 import { PanelTabType } from './editor-root/state/PanelTabTypes';
 import { TabBodyRenderer } from './editor-root/components/TabBodyRenderer';
 
 @observer
 export class App extends React.Component {
-  private appState = new AppState();
+  private appState = new EditorState();
 
   public render() {
     return (

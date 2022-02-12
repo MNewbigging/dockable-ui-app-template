@@ -2,10 +2,10 @@ import './controls-row.scss';
 
 import React from 'react';
 
-import { AppState } from './editor-root/state/AppState';
+import { EditorState } from './editor-root/state/EditorState';
 
 interface ControlsRowProps {
-  appState: AppState;
+  appState: EditorState;
 }
 
 export class ControlsRow extends React.Component<ControlsRowProps> {
