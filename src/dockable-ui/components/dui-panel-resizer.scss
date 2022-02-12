@@ -1,0 +1,20 @@
+@import '../../palette.scss';
+
+.resize-bar {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 8px;
+
+  &:hover {
+    background-color: $mainHoverColor;
+  }
+
+  &.vertical {
+    height: 100%;
+    cursor: ew-resize;
+  }
+  &.horizontal {
+    width: 100%;
+    cursor: ns-resize;
+  }
+}

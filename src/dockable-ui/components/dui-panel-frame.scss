@@ -1,0 +1,104 @@
+@import '../../palette.scss';
+
+.dui-panel-frame {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .panel-frame-navbar {
+    flex: 0 0 30px;
+    width: 100%;
+    border: 1px solid $mainBorderColor;
+    border-bottom: none;
+    position: relative;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-tab-list {
+      flex: 0 0 calc(100% - 30px);
+      height: 100%;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+
+      .panel-tab {
+        flex: 0 0 auto;
+        height: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        user-select: none;
+        cursor: grab;
+        border-right: 1px solid $mainBorderColor;
+
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        &.selected {
+          background-color: $mainHoverColor;
+        }
+
+        .tab-delete {
+          cursor: pointer;
+          border-radius: 50%;
+
+          &:hover {
+            background-color: gainsboro;
+          }
+        }
+      }
+    }
+
+    .navbar-tab-list::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    .navbar-tab-list::-webkit-scrollbar-track {
+      border-radius: 3px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-tab-list::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-options {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 3px;
+      background-color: white;
+    }
+  }
+
+  .panel-frame-body {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    background-color: $mainBackgroundColor;
+    border: 1px solid $mainBorderColor;
+    position: relative;
+    overflow: hidden;
+
+    &.hover-backdrop {
+      &::after {
+        position: absolute;
+        content: ' ';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.2;
+      }
+    }
+  }
+}

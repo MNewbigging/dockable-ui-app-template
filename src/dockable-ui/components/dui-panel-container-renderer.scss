@@ -1,0 +1,13 @@
+.dui-panel-container-renderer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .container-child {
+    flex-grow: 0;
+    flex-shrink: 1;
+    min-width: 30px;
+    min-height: 30px;
+  }
+}

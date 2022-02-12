@@ -1,0 +1,16 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+
+// Backgrounds
+$mainBackgroundColor: $light-gray4;
+
+$white: white;
+$black: black;
+
+// Borders
+$mainBorderColor: $gray5;
+$accentBorderColor: $dark-gray4;
+
+$mainHoverColor: $light-gray5;
+
+$mainBoxShadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
+  0 0 0 rgba(16, 22, 26, 0%);
