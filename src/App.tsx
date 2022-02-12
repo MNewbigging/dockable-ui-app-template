@@ -14,12 +14,16 @@ export class App extends React.Component {
   public render() {
     return (
       <div className={'app'}>
-        <DockableUI
-          duiState={this.appState.dockableUiState}
-          renderTabBody={this.renderTabBody}
-          renderPanelMenuItems={this.renderPanelMenuItems}
-          renderNoPanels={this.renderNoPanels}
-        />
+        <div className={'navbar-area'}></div>
+
+        <div className={'main-area'}>
+          <DockableUI
+            duiState={this.appState.dockableUiState}
+            renderTabBody={this.renderTabBody}
+            renderPanelMenuItems={this.renderPanelMenuItems}
+            renderNoPanels={this.renderNoPanels}
+          />
+        </div>
       </div>
     );
   }
