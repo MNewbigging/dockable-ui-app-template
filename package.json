@@ -1,5 +1,6 @@
 {
   "name": "project-template",
+  "homepage": "https://mnewbigging.github.io/dockable-ui-app-template",
   "version": "1.0.0",
   "description": "Project template with webpack, react, typescript, sass and mobx",
   "proxy": "http://localhost:8080",
@@ -7,7 +8,9 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",

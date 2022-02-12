@@ -61,9 +61,9 @@ export class App extends React.Component {
     return (
       <>
         <MenuItem
-          icon={'presentation'}
-          text={'Viewer'}
-          onClick={() => this.editorState.addTab(PanelTabType.VIEWER, panelId)}
+          icon={'tank'}
+          text={'Dummy tab 1'}
+          onClick={() => this.editorState.addTab(PanelTabType.DUMMY_ONE, panelId)}
         />
       </>
     );
