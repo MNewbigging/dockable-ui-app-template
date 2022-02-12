@@ -4,8 +4,9 @@ import React, { CSSProperties } from 'react';
 import { Button, MenuItem, NonIdealState } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 
-import { AppState } from './AppState';
+import { AppState } from './state/AppState';
 import { DockableUI } from './dockable-ui/components/DockableUI';
+import { PanelTabType } from './state/PanelTabTypes';
 
 @observer
 export class App extends React.Component {
@@ -29,21 +30,19 @@ export class App extends React.Component {
   }
 
   private renderTabBody = (_tabId: string) => {
-    // TODO - Get teh tab to render for this id
+    // TODO - Get the tab to render for this id
 
-    // TODO - I shouldn't need to do this here; should be part of the dockable ui tab body wrapper
-    const tabBodyStyle: CSSProperties = {
-      width: '100%',
-      height: '100%',
-    };
-
-    return <div style={tabBodyStyle}></div>;
+    return <div>something</div>;
   };
 
-  private renderPanelMenuItems = (_panelId: string) => {
+  private renderPanelMenuItems = (panelId: string) => {
     return (
       <>
-        <MenuItem icon={'add'} text={'Dummy item'} />
+        <MenuItem
+          icon={'presentation'}
+          text={'Viewer'}
+          onClick={() => this.appState.addTab(PanelTabType.VIEWER, panelId)}
+        />
       </>
     );
   };

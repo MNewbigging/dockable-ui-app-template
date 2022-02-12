@@ -1,6 +1,6 @@
 import { DuiPanelContainerChild, DuiPanelContainerFlow } from '../state/DuiPanelContainer';
 import { DuiPanelTab } from '../state/DuiPanel';
-import { PanelTab } from '../../AppState';
+import { PanelTab } from '../../state/AppState';
 
 export interface DuiLayoutModel {
   id: string;

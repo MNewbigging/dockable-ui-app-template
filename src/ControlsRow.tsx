@@ -2,7 +2,7 @@ import './controls-row.scss';
 
 import React from 'react';
 
-import { AppState } from './AppState';
+import { AppState } from './state/AppState';
 
 interface ControlsRowProps {
   appState: AppState;
